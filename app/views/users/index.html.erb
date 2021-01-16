@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Login</th>
+      <th>Crypted password</th>
+      <th>Home number</th>
+      <th>Mobile number</th>
+      <th>Work number</th>
+      <th>Fax number</th>
+      <th>Other number</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Pincode</th>
+      <th>Country</th>
+      <th>Auth token</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.age %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.login %></td>
+        <td><%= user.crypted_password %></td>
+        <td><%= user.home_number %></td>
+        <td><%= user.mobile_number %></td>
+        <td><%= user.work_number %></td>
+        <td><%= user.fax_number %></td>
+        <td><%= user.other_number %></td>
+        <td><%= user.address %></td>
+        <td><%= user.city %></td>
+        <td><%= user.state %></td>
+        <td><%= user.pincode %></td>
+        <td><%= user.country %></td>
+        <td><%= user.auth_token %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
